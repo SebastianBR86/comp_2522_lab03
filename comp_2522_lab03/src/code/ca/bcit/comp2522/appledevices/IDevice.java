@@ -53,7 +53,7 @@ public abstract class IDevice
      */
     public abstract void printDetails();
 
-    private static void validatePurpose(String purpose)
+    private static void validatePurpose(final String purpose)
     {
         if (purpose == null || purpose.trim().isEmpty())
         {
