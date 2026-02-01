@@ -1,5 +1,7 @@
 package ca.bcit.comp2522.appledevices;
 
+import java.util.Objects;
+
 /**
  * Abstract class for all IDevices (IPhone, IPad, IPod).
  *
@@ -14,8 +16,6 @@ public abstract class IDevice
 
     /**
      * Constructor for IDevice
-     *
-     * @param purpose String
      */
     public IDevice(final String purpose)
     {
@@ -32,8 +32,32 @@ public abstract class IDevice
         return purpose;
     }
 
+    @Override
+    public boolean equals(final Object o)
+    {
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        IDevice iDevice = (IDevice) o;
+        return Objects.equals(purpose, iDevice.purpose);
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return Objects.hashCode(purpose);
+    }
+
     /**
      * Forces child class's to have a printDetails method.
      */
     public abstract void printDetails();
+
+    private static void validatePurpose(String purpose)
+    {
+        if (purpose == null || purpose.trim().isEmpty())
+        {
+            throw new IllegalArgumentException("Purpose cannot be null or empty");
+        }
+    }
 }
