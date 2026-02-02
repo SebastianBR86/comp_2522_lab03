@@ -11,6 +11,7 @@ import java.util.Objects;
  */
 public class IPad extends IDevice
 {
+    private final static String PURPOSE = "learning";
     private final boolean hasCase;
     private final String osVersion;
 
@@ -19,13 +20,11 @@ public class IPad extends IDevice
      *
      * @param hasCase boolean
      * @param osVersion String
-     * @param getPurpose String
      */
     public IPad(final boolean hasCase,
-                final String osVersion,
-                final String getPurpose)
+                final String osVersion)
     {
-        super("learning");
+        super(PURPOSE);
 
         if(osVersion == null || osVersion.isEmpty())
         {
