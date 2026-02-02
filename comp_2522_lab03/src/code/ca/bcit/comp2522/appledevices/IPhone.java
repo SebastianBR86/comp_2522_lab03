@@ -10,11 +10,12 @@ import java.util.Objects;
  * @author Samien Munwar
  * @version 1.0
  */
-public class IPhone extends IDevice
+public abstract class IPhone extends IDevice
 {
     private double phonePlanRemainingMinutes;
     private String carrier;
     private static final String PURPOSE = "talking";
+    private static final int MIN_PHONE_PLAN_REMAINING_MINUTES = 0;
 
     /**
      * Constructor for IPhone.
@@ -77,7 +78,8 @@ public class IPhone extends IDevice
     @Override
     public boolean equals(final Object o)
     {
-        if (!(o instanceof IPhone iPhone)) {
+        if (!(o instanceof IPhone iPhone))
+        {
             return false;
         }
         if (!super.equals(o)) {
@@ -96,10 +98,8 @@ public class IPhone extends IDevice
     @Override
     public String toString()
     {
-        return "IPhone {" +
-                "phonePlanRemainingMinutes = " + phonePlanRemainingMinutes +
-                ", carrier = '" + carrier + '\'' +
-                '}';
+        return  "phonePlanRemainingMinutes = " + phonePlanRemainingMinutes +
+                    ", carrier = '" + carrier + " ";
     }
 
     /**
@@ -121,9 +121,10 @@ public class IPhone extends IDevice
 
     private static void validatePhonePlanRemainingMinutes(final double phonePlanRemainingMinutes)
     {
-        if (phonePlanRemainingMinutes < 0)
+        if (phonePlanRemainingMinutes < MIN_PHONE_PLAN_REMAINING_MINUTES)
         {
-            throw new IllegalArgumentException("Phone plan remaining minutes cannot be negative");
+            throw new IllegalArgumentException("Phone plan remaining minutes cannot be lower" +
+                                                       " than " + MIN_PHONE_PLAN_REMAINING_MINUTES);
         }
     }
 }
