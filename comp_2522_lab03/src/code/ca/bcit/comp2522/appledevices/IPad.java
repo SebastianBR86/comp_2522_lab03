@@ -9,9 +9,9 @@ import java.util.Objects;
  * @author Samien Munwar
  * @version 1.0
  */
-
-public class IPad extends IDevice {
-
+public class IPad extends IDevice
+{
+    private final static String PURPOSE = "learning";
     private final boolean hasCase;
     private final String osVersion;
 
@@ -20,14 +20,11 @@ public class IPad extends IDevice {
      *
      * @param hasCase boolean
      * @param osVersion String
-     * @param getPurpose String
      */
-
     public IPad(final boolean hasCase,
-                final String osVersion,
-                final String getPurpose)
+                final String osVersion)
     {
-        super("learning");
+        super(PURPOSE);
 
         if(osVersion == null || osVersion.isEmpty())
         {
@@ -43,7 +40,6 @@ public class IPad extends IDevice {
      *
      * @return hasCase()
      */
-
     public boolean hasCase()
     {
             return hasCase;
@@ -54,7 +50,6 @@ public class IPad extends IDevice {
      *
      * @return getOsVersion
      */
-
     public String getOsVersion()
     {
         return osVersion;
@@ -72,6 +67,11 @@ public class IPad extends IDevice {
         System.out.println(" osVersion=" + osVersion);
     }
 
+    /**
+     * Overrides toString.
+     *
+     * @return toString + hashcode + osVersion
+     */
     @Override
     public String toString()
     {
@@ -104,6 +104,11 @@ public class IPad extends IDevice {
         return Objects.equals(osVersion, iPad.osVersion);
     }
 
+    /**
+     * Overrides hashcode.
+     *
+     * @return hashcode
+     */
     @Override
     public int hashCode()
     {
