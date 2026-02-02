@@ -10,7 +10,7 @@ import java.util.Objects;
  * @author Samien Munwar
  * @version 1.0
  */
-public abstract class IPhone extends IDevice
+public class IPhone extends IDevice
 {
     private double phonePlanRemainingMinutes;
     private String carrier;
