@@ -126,6 +126,44 @@ public class Main
         System.out.println();
 
         // Create IPhone17 objects
+        final IPhone17 iphone17_1;
+        final IPhone17 iphone17_2;
+        final IPhone17 iphone17_3;
 
+        // 200 minutes, carrier Sprint, high-res camera, 128 GB memory
+        iphone17_1 = new IPhone17(200.0,
+                                  "Sprint",
+                                  true,
+                                  128);
+        // 250 minutes, carrier Verizon, no high-res camera, 64 GB memory
+        iphone17_2 = new IPhone17(250.0,
+                                  "Verizon",
+                                  false,
+                                  64);
+        // 200 minutes, carrier AT&T, high-res camera, 256 GB memory
+        iphone17_3 = new IPhone17(200.0,
+                                  "AT&T",
+                                  true,
+                                  256);
+
+        // Test equality and inequality for IPhone17
+        System.out.println("IPhone17 Equality Test:");
+        if (!iphone17_1.equals(iphone17_2))
+        {
+            System.out.println("CORRECT: iphone17_1 is not equal to iphone17_2");
+        }
+        else
+        {
+            System.out.println("INCORRECT: iphone17_1 should not be equal to iphone17_2");
+        }
+
+        if (iphone17_1.equals(iphone17_3))
+        {
+            System.out.println("CORRECT: iphone17_1 is equal to iphone17_3");
+        }
+        else
+        {
+            System.out.println("INCORRECT: iphone17_1 should be equal to iphone17_3");
+        }
     }
 }

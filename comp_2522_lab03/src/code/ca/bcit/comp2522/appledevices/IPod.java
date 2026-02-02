@@ -10,7 +10,7 @@ import java.util.Objects;
  * @author Samien Munwar
  * @version 1.0
  */
-final public class IPod extends IDevice
+public final class IPod extends IDevice
 {
     private static final String PURPOSE = "music";
     private final double maxVolume;

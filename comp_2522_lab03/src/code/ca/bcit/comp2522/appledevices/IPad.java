@@ -9,7 +9,7 @@ import java.util.Objects;
  * @author Samien Munwar
  * @version 1.0
  */
-public class IPad extends IDevice
+public final class IPad extends IDevice
 {
     private final static String PURPOSE = "learning";
     private final boolean hasCase;
