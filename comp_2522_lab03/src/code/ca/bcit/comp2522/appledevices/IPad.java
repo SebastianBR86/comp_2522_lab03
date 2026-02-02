@@ -26,13 +26,23 @@ public class IPad extends IDevice
     {
         super(PURPOSE);
 
+        validateOsVersion(osVersion);
+
+        this.hasCase = hasCase;
+        this.osVersion = osVersion;
+    }
+
+    /*
+     * catches if the os Version is empty or null
+     *
+     * @param osVersion
+     */
+    private static void validateOsVersion(String osVersion)
+    {
         if(osVersion == null || osVersion.isEmpty())
         {
             throw new IllegalArgumentException("osVersion cannot be null or empty");
         }
-
-        this.hasCase = hasCase;
-        this.osVersion = osVersion;
     }
 
     /**
